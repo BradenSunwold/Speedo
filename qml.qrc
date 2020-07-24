@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>layer_1_219_3_219_3.png</file>
+        <file>layer_2_219_4_219_4.png</file>
+        <file>artboard_1_219_5_219_5.png</file>
+        <file>Speedo.qml</file>
+    </qresource>
+</RCC>
