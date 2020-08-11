@@ -5,5 +5,7 @@
         <file>layer_2_219_4_219_4.png</file>
         <file>artboard_1_219_5_219_5.png</file>
         <file>Speedo.qml</file>
+        <file>Digit.qml</file>
+        <file>ScrollingDigits.qml</file>
     </qresource>
 </RCC>
