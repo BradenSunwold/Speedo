@@ -55,6 +55,7 @@ Window {
             // Run odometer animation slower than trip
             NumberAnimation on number {
                 from: 0; to: 75
+
                 duration: 500000
             }
         }
