@@ -1,5 +1,7 @@
 
-import QtQuick 2.0
+import QtQuick 2.6
+import QtQuick.Controls 2.0
+//import io.qt.examples.backend 1.0
 
 Item {
 
@@ -14,35 +16,25 @@ Item {
     height: 472
     visible: true
 
-    Timer {
-        id: id_timer
-        repeat: true
-        interval: 1000
-        running: true
+//    BackEnd {
+//        id: backend
+//    }
 
-        onTriggered: {
-//            if(id_gear.value == 6) id_gear.value = 0;
-//            else id_gear.value++;
+//    Timer {           // For simulated wheel speed readings
+//        id: id_timer
+//        repeat: true
+//        interval: 1000
+//        running: true
 
-            if(id_root.count % 5 == 0){
-//                id_speed.value = backend.speedValue
-                if(id_root.value === 0) id_root.value = 220
-                else id_root.value = 0
+//        onTriggered: {
 
-//                if(id_info.fuelValue == 0) id_info.fuelValue = 4
-//                else id_info.fuelValue = 0
-            }
-            id_root.count++;
-
-//            if(count % 2 == 0){
-//                id_turnLeft.isActive = true
-//                id_turnRight.isActive = false
-//            }else{
-//                id_turnLeft.isActive = false
-//                id_turnRight.isActive = true
+//            if(id_root.count % 5 == 0){
+//                if(id_root.value === 0) id_root.value = 220
+//                else id_root.value = 0
 //            }
-        }
-    }
+//            id_root.count++;
+//        }
+//    }
 
     Image {
         id: id_speed
@@ -91,12 +83,11 @@ Item {
     Item {
         id: id_needle
 
-        property int value: id_root.value
+        property int value: backend.wspd // connect backend wspd sensor reading to qml speedo//id_root.value
         property int startAngle : 0
         // account for 20 km/hr not having even spacing like the rest of the speedometer
         property double angleLength: (value < 20) ? .75 : 15 + ((value - 20) * 1.15)
         property int maxSpeed: 220
-
 
         anchors.horizontalCenter: id_speed.horizontalCenter   //  x: 208
         anchors.verticalCenter: id_speed.verticalCenter   // y: 337
@@ -118,7 +109,7 @@ Item {
         antialiasing: true
 
         Behavior on rotation {
-            SmoothedAnimation { velocity: 50 }
+            SmoothedAnimation { velocity: 100 }
         }
     }
 }

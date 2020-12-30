@@ -14,7 +14,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        sensorBackend.cpp
 
 RESOURCES += qml.qrc
 
@@ -32,3 +33,6 @@ TARGET = stm32mp1Test
     target.files = stm32mp1Test
     target.path = /home/root
 INSTALLS += target
+
+HEADERS += \
+    sensorBackend.h
