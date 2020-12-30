@@ -54,6 +54,40 @@ Item {
         source: "layer_1_219_3_219_3.png"
     }
 
+    ScrollingDigits {
+        id: trip
+        anchors.verticalCenterOffset: 63
+        anchors.horizontalCenterOffset: -3
+        anchors.centerIn: id_speed
+
+        positions: 4
+        widthScaler: 2.5
+        heightScaler: 2.0
+        colorFlag: 1                    // want last digit to be black instead of white
+
+        NumberAnimation on number {
+            from: 0; to: 100
+            duration: 50000
+        }
+    }
+
+    ScrollingDigits {
+        id: odometer
+        anchors.verticalCenterOffset: -61
+        anchors.horizontalCenterOffset: -2
+        anchors.centerIn: id_speed
+
+        positions: 6
+        widthScaler: 1.7
+        heightScaler: 2.0
+
+        // Run odometer animation slower than trip
+        NumberAnimation on number {
+            from: 0; to: 75
+            duration: 500000
+        }
+    }
+
     Item {
         id: id_needle
 
@@ -64,8 +98,8 @@ Item {
         property int maxSpeed: 220
 
 
-        x: 208
-        y: 337
+        anchors.horizontalCenter: id_speed.horizontalCenter   //  x: 208
+        anchors.verticalCenter: id_speed.verticalCenter   // y: 337
         width: 68
         height: 68
 
@@ -87,7 +121,6 @@ Item {
             SmoothedAnimation { velocity: 50 }
         }
     }
-
 }
 
 
