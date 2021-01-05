@@ -23,7 +23,7 @@ signals:
     void wspdChanged();
 
 private:
-    QString m_userName;
+    QString m_userName = "HELLO";
     int m_wspd = 40;
 };
 
