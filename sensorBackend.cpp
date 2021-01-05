@@ -29,3 +29,25 @@ void BackEnd::setWspd(int wspd) {
 int BackEnd::getWspd() {
     return m_wspd;
 }
+
+void BackEnd::setTrip(int trip) {
+    if (trip == m_trip)
+        return;
+    m_trip = trip;
+    emit tripChanged();     // emit signal for qml
+}
+
+int BackEnd::getTrip() {
+    return m_trip;
+}
+
+void BackEnd::setOdom(int odom) {
+    if (odom == m_odom)
+        return;
+    m_odom = odom;
+    emit odomChanged();
+}
+
+int BackEnd::getOdom() {
+    return m_odom;
+}

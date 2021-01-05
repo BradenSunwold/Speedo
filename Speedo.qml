@@ -52,15 +52,16 @@ Item {
         anchors.horizontalCenterOffset: -3
         anchors.centerIn: id_speed
 
-        positions: 4
+        positions: 4                    // Number of digits to display linked to ScrollingDigits
         widthScaler: 2.5
         heightScaler: 2.0
         colorFlag: 1                    // want last digit to be black instead of white
 
-        NumberAnimation on number {
-            from: 0; to: 100
-            duration: 50000
-        }
+        number: backend.trip            // Link Cpp trip member to qml trip digits
+//        NumberAnimation on number {
+//            from: 0; to: 100
+//            duration: 50000
+//        }
     }
 
     ScrollingDigits {
@@ -73,11 +74,12 @@ Item {
         widthScaler: 1.7
         heightScaler: 2.0
 
+        number: backend.odom        // Link Cpp member odom to odometer
         // Run odometer animation slower than trip
-        NumberAnimation on number {
-            from: 0; to: 75
-            duration: 500000
-        }
+//        NumberAnimation on number {
+//            from: 0; to: 75
+//            duration: 500000
+//        }
     }
 
     Item {

@@ -35,16 +35,16 @@ int main(int argc, char *argv[])
         qDebug("Failed to open sys file");
     }
 
-    char* buf1;
-    read(fd, buf1, 2);
-    qDebug("Read attempted");
-    qDebug(buf1);
-    //backend.setUserName(buf1);
-    close(fd);
+//    char* buf1;
+//    read(fd, buf1, 2);
+//    qDebug("Read attempted");
+//    qDebug(buf1);
+//    //backend.setUserName(buf1);
+//    close(fd);
 
     //backend.setUserName(val);
 
-//    backend.setWspd(90);
+    backend.setWspd(48);
 //    for(int i; i < 100000; i++);
 //    backend.setWspd(0);
 //    for(int i; i < 100000; i++);
