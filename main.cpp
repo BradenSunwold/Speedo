@@ -11,6 +11,8 @@
 #include <QDebug>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <QSerialPort>
+#include <QSerialPortInfo>
 
 int main(int argc, char *argv[])
 {
@@ -44,7 +46,6 @@ int main(int argc, char *argv[])
 
     //backend.setUserName(val);
 
-    backend.setWspd(48);
 //    for(int i; i < 100000; i++);
 //    backend.setWspd(0);
 //    for(int i; i < 100000; i++);

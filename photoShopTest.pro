@@ -1,4 +1,5 @@
 QT += quick
+QT += serialport
 
 CONFIG += c++11
 
