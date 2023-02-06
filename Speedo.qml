@@ -85,10 +85,10 @@ Item {
     Item {
         id: id_needle
 
-        property int value: backend.wspd // connect backend wspd sensor reading to qml speedo//id_root.value
+        property double value: backend.wspd // connect backend wspd sensor reading to qml speedo//id_root.value
         property int startAngle : 0
         // account for 20 km/hr not having even spacing like the rest of the speedometer
-        property double angleLength: (value < 20) ? .75 : 15 + ((value - 20) * 1.15)
+        property double angleLength: (value < 20) ? .75 * value : 15 + ((value - 20) * 1.15)
         property int maxSpeed: 220
 
         anchors.horizontalCenter: id_speed.horizontalCenter   //  x: 208

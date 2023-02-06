@@ -5,14 +5,11 @@
 //#include <fstream>
 //#include <iostream>
 //#include <Qstring>
-#include <fcntl.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <QDebug>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <QSerialPort>
-#include <QSerialPortInfo>
+//#include <fcntl.h>
+//#include <stdio.h>
+//#include <unistd.h>
+//#include <sys/types.h>
+//#include <sys/stat.h>
 
 int main(int argc, char *argv[])
 {
@@ -28,14 +25,14 @@ int main(int argc, char *argv[])
 
 
     // Set up remote processor communication
-    int fd;
-    char buf[50];
-    char* s = "/sys/kernel/debug/remoteProc/remoteProc0/trace0";
-    snprintf(buf, 47, "%s\n", s);
-    fd = open(buf, O_RDONLY);
-    if(fd < 0) {
-        qDebug("Failed to open sys file");
-    }
+//    int fd;
+//    char buf[50];
+//    char* s = "/sys/kernel/debug/remoteProc/remoteProc0/trace0";
+//    snprintf(buf, 47, "%s\n", s);
+//    fd = open(buf, O_RDONLY);
+//    if(fd < 0) {
+//        qDebug("Failed to open sys file");
+//    }
 
 //    char* buf1;
 //    read(fd, buf1, 2);
@@ -49,7 +46,7 @@ int main(int argc, char *argv[])
 //    for(int i; i < 100000; i++);
 //    backend.setWspd(0);
 //    for(int i; i < 100000; i++);
-//    backend.setWspd(200);
+    backend.setWspd(5.9);
 
 //    qmlRegisterType<BackEnd>("io.qt.examples.backend", 1, 0, "BackEnd");
 //    QQmlApplicationEngine engine;
